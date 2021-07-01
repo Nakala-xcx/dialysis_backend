@@ -92,5 +92,5 @@ jobs:
             mv source_files app
             cd ./app
             logpath=/histsys/dev/logs/$(date +"%Y-%m-%d@%H_%M_%S").log
-            nohup java -jar web/target/web-1.0-SNAPSHOT.jar -Duser.timezone=GMT+8 > $logpath &
+            nohup java -jar web/target/web-1.0-SNAPSHOT.jar -Duser.timezone=GMT+8 --server.port=8080 > $logpath &
             echo "🐶Deploy Success"
