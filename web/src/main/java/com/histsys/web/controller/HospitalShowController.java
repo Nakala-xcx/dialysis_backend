@@ -20,9 +20,9 @@ public class HospitalShowController {
     }
 
     @GetMapping("/page")
-    public ResponseBody page(@RequestParam(defaultValue = "1") Integer page,
-                             @RequestParam(defaultValue = "10") Integer size) {
-        return ResponseBody.ok(hospitalRepository.findAll(PageRequest.of(page, size, Sort.unsorted())));
+    public ResponseBody page(@RequestParam(defaultValue = "1") Integer current,
+                             @RequestParam(defaultValue = "10") Integer pageSize) {
+        return ResponseBody.ok(hospitalRepository.findAll(PageRequest.of(current - 1, pageSize, Sort.unsorted())));
     }
 
     @GetMapping("/item/{id}")

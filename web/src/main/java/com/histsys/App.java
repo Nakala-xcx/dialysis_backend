@@ -2,10 +2,10 @@ package com.histsys;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Collections;
+import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
+@PropertySource(ignoreResourceNotFound = false, value = "classpath:application[${spring.profiles.active}].properties")
 public class App {
 
     public static void main(String[] args) {
