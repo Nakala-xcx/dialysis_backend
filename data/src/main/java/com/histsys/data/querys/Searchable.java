@@ -55,15 +55,15 @@ public interface Searchable<T> {
                         if (activeFlag) filterBuffer.append(" AND ");
                         filterBuffer.append(name).append(" = '").append(value).append("'");
                         activeFlag = true;
-                    } else if (type.isInstance(Integer.class)) {
+                    } else if (type == Integer.class) {
                         if (activeFlag) filterBuffer.append(" AND ");
                         filterBuffer.append(name).append(" = ").append(value);
                         activeFlag = true;
-                    } else if (type.isInstance(Long.class)) {
+                    } else if (type == Long.class) {
                         if (activeFlag) filterBuffer.append(" AND ");
                         filterBuffer.append(name).append(" = ").append(value);
                         activeFlag = true;
-                    } else if (type.isInstance(Date.class)) {
+                    } else if (type == Date.class) {
                         // 暂且处理为 =，后续优化为时间段匹配（需传入一对 date 才行）
                         if (activeFlag) filterBuffer.append(" AND ");
                         filterBuffer.append(name).append(" = '").append(value).append("'");
